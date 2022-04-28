@@ -31,6 +31,19 @@ try {
     // Note - error messages will vary depending on browser
   }
 
+  try{
+      nonExistentFunction()
+  } catch (error) {
+      rollbar.critical('Critical error', error)
+  }
+
+  try{
+      nonExistentFunction()
+  } catch (error) {
+      rollbar.warning('Warning', error)
+  }
+
+
 app.use(rollbar.errorHandler())
 
 app.listen(port, () => {
