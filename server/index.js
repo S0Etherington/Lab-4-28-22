@@ -23,6 +23,14 @@ app.get('/', (req,res) => {
 
 const port = process.env.PORT || 4500
 
+try {
+    nonExistentFunction();
+  } catch (error) {
+    rollbar.error(error);
+    // expected output: ReferenceError: nonExistentFunction is not defined
+    // Note - error messages will vary depending on browser
+  }
+
 app.use(rollbar.errorHandler())
 
 app.listen(port, () => {
