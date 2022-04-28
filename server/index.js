@@ -34,13 +34,13 @@ try {
   try{
       nonExistentFunction()
   } catch (error) {
-      rollbar.critical('Critical error', error)
+      rollbar.critical('Critical error')
   }
 
   try{
       nonExistentFunction()
   } catch (error) {
-      rollbar.warning('Warning', error)
+      rollbar.warning('Warning')
   }
 
 
