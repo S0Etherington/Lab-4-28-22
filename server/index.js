@@ -23,6 +23,23 @@ app.get('/', (req,res) => {
 
 const port = process.env.PORT || 4500
 
+// let text = []
+
+// app.post('user/api', (req, res)=>{
+//     let {input} = req.body
+//     input = input.trim()
+//     text.push(input)
+//     rollbar.log('array works')
+//     res.status(200).send(text)
+// })
+
+let inputText = ['1', 'b', 'hello']
+
+app.get('/user/api', (req, res) => {
+  rollbar.log('succesfully recieved input text')
+  res.status(200).send(inputText)
+})
+
 try {
     nonExistentFunction();
   } catch (error) {
